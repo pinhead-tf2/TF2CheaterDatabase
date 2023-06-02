@@ -18,3 +18,33 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
+
+cheaterDatabase = client["cheaterDatabase"]
+userList = cheaterDatabase["userList"]
+
+schema = {
+    '_id': {
+        'type': '$numberLong',
+        'minlength': 17,
+        'maxlength': 17,
+        'required': True
+    }
+}
+
+testdata = {
+    "_id": {"$numberLong": "76561198818675138"},
+    "username": "pinhead",
+    "aliases": [
+        "pinhead",
+        "pinhead the sherpa"
+    ],
+    "friends": [
+        {"$numberLong": "76561199007223827"}
+    ],
+    "cheatData": {
+        "flag": "innocent",
+        "infractions": [],
+        "evidence": []
+    },
+    "overrideName": "pinhead"
+}
