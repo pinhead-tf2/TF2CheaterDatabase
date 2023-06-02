@@ -1,0 +1,15 @@
+{
+  "palette": [
+    {
+      "id": "LIfsThvFXnBeywq8tmqSB",
+      "name": "Green",
+      "value": "#a6e3a1"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "Database",
+      "color": "LIfsThvFXnBeywq8tmqSB"
+    }
+  ]
+}
