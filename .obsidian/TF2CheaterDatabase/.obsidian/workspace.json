@@ -11,6 +11,21 @@
             "id": "e3028e9fda800028",
             "type": "leaf",
             "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": -226.2000274658203,
+                  "y": 165.900146484375,
+                  "zoom": 0
+                }
+              }
+            }
+          },
+          {
+            "id": "75235694dc4b54cc",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
                 "file": "Overview.md",
@@ -19,7 +34,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,11 +162,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0bdb35fc477f789d",
+  "active": "75235694dc4b54cc",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "Overview.md",
     "MCDbotmegasearch.png",
     "MCDbotmark.png",
-    "Overview.md",
     "MCDbotsearch.png",
     "Database/Untitled.md",
     "Untitled.md",

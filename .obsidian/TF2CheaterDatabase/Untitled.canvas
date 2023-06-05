@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"0808dd622f1746db","x":-660,"y":-120,"width":250,"height":480,"color":"4","type":"text","text":"User List\n- id `TEXT: Steam3ID` \n- dateAdded `INTEGER`\n- dateUpdated `INTEGER`\n- updatee `Relational: Permissions List`\n- overrideName `TEXT`\n- username `TEXT`\n- aliases `TEXT: json_array()`\n- friends `TEXT: json_array()`\n- cheaterData `Relational: Cheater Data`"},
+		{"id":"6ff6dfe44eb887f0","x":-200,"y":60,"width":250,"height":360,"color":"1","type":"text","text":"Cheater Data\n- id `TEXT: Steam3ID`\n- flag `TEXT CHECK(flag IN (\"innocent\", \"watched\", \"suspicious\", \"cheater\", \"bot\"))`\n- cheatTypes `TEXT`\n- evidenceLinks `TEXT: json_array(\"url1\", \"url2\")`"},
+		{"id":"19e078f460db4cfe","x":-200,"y":-180,"width":250,"height":120,"color":"6","type":"text","text":"Permissions List\n- id `INTEGER: Discord UID`"}
+	],
+	"edges":[
+		{"id":"631a83431180e5c1","fromNode":"0808dd622f1746db","fromSide":"right","toNode":"6ff6dfe44eb887f0","toSide":"left"},
+		{"id":"650ba984da0d1cf5","fromNode":"0808dd622f1746db","fromSide":"right","toNode":"19e078f460db4cfe","toSide":"left"}
+	]
+}

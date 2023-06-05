@@ -2,6 +2,7 @@ import discord
 import os
 import time
 import aiohttp
+import aiosqlite
 
 from discord import option
 from discord.ext import commands
@@ -36,6 +37,32 @@ async def on_ready():
         finally:
             exit()
     bot.startup_complete = True
+
+    async with aiosqlite.connect("cheater_database.sqlite") as db:
+        await db.execute('''
+            CREATE TABLE IF NOT EXISTS permissions_list
+            (   
+                user_id INTEGER NOT NULL PRIMARY KEY
+            )
+        ''')
+        await db.execute('''
+            CREATE TABLE IF NOT EXISTS user_list
+            (
+                id TEXT NOT NULL PRIMARY KEY,
+                date_added INTEGER(6) NOT NULL DEFAULT (strftime('%s', 'now')),
+                date_updated INTEGER(6),
+                editor INTEGER REFERENCES permissions_list(user_id),
+                override_name TEXT,
+                username TEXT NOT NULL,
+                aliases TEXT,
+                friends TEXT,
+                flag TEXT CHECK ( flag IN ('innocent', 'watched', 'suspicious', 'cheater', 'bot' )) NOT NULL DEFAULT 'innocent',
+                cheat_types TEXT,
+                evidence_links TEXT,
+                bot_owner TEXT
+            )
+        ''')
+        await db.commit()
 
     # bot.aiohttp_session = aiohttp.ClientSession()
     # bot.error_webhook = discord.Webhook.from_url(

@@ -9,13 +9,33 @@ To make a database that houses a master cheater list that:
 
 # References
 https://megascatterbomb.com/mcd
-![[MCDbotpreview.png]]
 ![[MCDgraphpreview.png]]
 
 # Database
 Uses: MongoDB
 - Can be converted to JSON for website displaying
 	- Allows for easy downloading
+
+## Stores
+Permissions List
+- id `INTEGER: Discord UID`
+
+Cheater Data
+- id `TEXT: Steam3ID`
+- flag `TEXT CHECK(flag IN ("innocent", "watched", "suspicious", "cheater", "bot"))`
+- cheatTypes `TEXT`
+- evidenceLinks `TEXT: json_array("url1", "url2")`
+
+User List
+- id `TEXT: Steam3ID` 
+- dateAdded `INTEGER`
+- dateUpdated `INTEGER`
+- updatee `Relational: Permissions List`
+- overrideName `TEXT`
+- username `TEXT`
+- aliases `TEXT: json_array()`
+- friends `TEXT: json_array()`
+- cheaterData `Relational: Cheater Data`
 
 Stores:
 - User Data
@@ -50,4 +70,26 @@ Uses: Primary interface for actions on the database
 - Find user by name
 - Find user by Steam3ID
 - Find all users with current username or past aliases 
-- 
+- Mass search users by pasting `status` output into channel
+- Select user from search if multiple
+
+#### Selections
+![[MCDbotpreview.png]]
+- Show profile info 
+	- Username (Should be refreshed)
+	- Aliases (Should be refreshed)
+	- Hacks
+	- Evidence URLs
+	- VAC Status
+	- Friends (Should be refreshed)
+	- Database Update Info
+	- SteamIDs (Converted before creation using steam3id_converter.py)
+- Controls
+	- Marks
+		- Cheater
+		- Suspicious
+		- Remove mark
+		- Innocent
+	- Modify 
+		- Cheats
+		- Evidence
