@@ -1,0 +1,27 @@
+{
+    "_id": "[U:1:3333333333]",
+    "date": {
+        "$date": {
+            "$numberLong": "1685904702001"
+        }
+    },
+    "username": "OMEGATRONIC",
+    "aliases": [
+        "OMEGATRONIC"
+    ],
+    "friends": [
+        "[U:1:1111111111]",
+        "[U:1:2222222222]"
+    ],
+    "cheatData": {
+        "flag": "cheater",
+        "isBot": true,
+        "infractions": [
+            "cathook"
+        ],
+        "evidence": [
+            "linkgoeshere"
+        ]
+    },
+    "overrideName": "hello"
+}

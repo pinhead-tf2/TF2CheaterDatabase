@@ -1,0 +1,37 @@
+{
+    "_id": "[U:1:1341943403]",
+    "date": {
+        "$date": {
+            "$numberLong": "1685904702000"
+        }
+    },
+    "updateInfo": {
+        "lastUpdated": {
+            "$date": {
+                "$numberLong": "1685939292000"
+            }
+        },
+        "updater": {
+            "$numberLong": "246291288775852033"
+        }
+    },
+    "overrideName": "hello",
+    "username": "OMEGATRONIC",
+    "aliases": [
+        "OMEGATRONIC"
+    ],
+    "friends": [
+        "[U:1:1546566598]",
+        "[U:1:1545378816]"
+    ],
+    "cheatData": {
+        "flag": "cheater",
+        "isBot": true,
+        "infractions": [
+            "cathook"
+        ],
+        "evidence": [
+            "linkgoeshere"
+        ]
+    }
+}

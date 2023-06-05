@@ -18,30 +18,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "ec76b240ee7c9fcc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Database/Untitled.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8c52a85d3088a304",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Master Task List.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ]
       }
@@ -170,13 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e3028e9fda800028",
+  "active": "0bdb35fc477f789d",
   "lastOpenFiles": [
-    "Database/Untitled.md",
+    "MCDbotmegasearch.png",
+    "MCDbotmark.png",
     "Overview.md",
-    "Database",
-    "MCDgraphpreview.png",
+    "MCDbotsearch.png",
+    "Database/Untitled.md",
+    "Untitled.md",
     "Master Task List.md",
-    "MCDbotpreview.png"
+    "MCDbotpreview.png",
+    "MCDgraphpreview.png",
+    "Database"
   ]
 }

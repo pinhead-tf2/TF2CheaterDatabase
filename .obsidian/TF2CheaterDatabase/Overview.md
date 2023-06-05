@@ -24,7 +24,7 @@ Stores:
 	- SteamID64 `int`
 	- Friends' SteamID64 `int[]`
 - Cheater Data
-	- Suspicion level `String[Innocent, Watched, Suspicious, Cheater]`
+	- Flag `String[Innocent, Watched, Suspicious, Cheater]`
 		- Suspicious, Cheater
 			- Infractions/cheat types `String[]`
 			- Optional evidence URL `String[]`
@@ -32,6 +32,8 @@ Stores:
 	- Override username `String`
 
 # Steam API
+https://partner.steamgames.com/doc/webapi/ISteamUser#GetPlayerSummaries
+https://partner.steamgames.com/doc/webapi/ISteamUser#GetFriendList
 Interface to get:
 - User data
 	- Current username
@@ -39,3 +41,13 @@ Interface to get:
 	- Aliases
 	- VAC Status
 	- Friends
+
+# Discord
+Uses: Primary interface for actions on the database
+
+## Features
+#### Searches
+- Find user by name
+- Find user by Steam3ID
+- Find all users with current username or past aliases 
+- 

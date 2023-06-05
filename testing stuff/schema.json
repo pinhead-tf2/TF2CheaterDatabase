@@ -1,12 +1,16 @@
 {
     "title": "userList",
-    "description": "Holds the data for each user in the cheater database",
-    "required": ["_id", "date", "username", "cheatData"],
+    "required": [
+        "_id",
+        "date",
+        "username",
+        "cheatData"
+    ],
     "properties": {
         "_id": {
-            "bsonType": "long",
+            "bsonType": "string",
             "title": "User ID",
-            "description": "Holds the SteamID64 of an entered user. Is a primary key. Required."
+            "description": "Holds the Steam3 ID of an entered user. Is a primary key. Required."
         },
         "date": {
             "bsonType": "date",
@@ -31,20 +35,22 @@
             "title": "Friends",
             "description": "The current friends of the user, obtained via Steam API.",
             "items": {
-                "bsonType": "long"
+                "bsonType": "string"
             }
         },
         "cheatData": {
             "bsonType": "object",
             "title": "Cheat Data",
             "description": "An object that contains what the user is logged as, reasons why if they're not innocent, and optional evidence links to prove they cheat. Required entries: flag, isBot.",
-            "required": ["flag, isBot"],
+            "required": [
+                "flag",
+                "isBot"
+            ],
             "properties": {
                 "flag": {
                     "bsonType": "string",
                     "title": "Flag",
-                    "description": "What level of suspicion the user is at. Required.",
-                    "enum": ["innocent", "watched", "suspicious", "cheater"]
+                    "description": "What level of suspicion the user is at. Required."
                 },
                 "isBot": {
                     "bsonType": "bool",
