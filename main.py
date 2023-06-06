@@ -51,7 +51,7 @@ async def on_ready():
                 id TEXT NOT NULL PRIMARY KEY,
                 date_added INTEGER(6) NOT NULL DEFAULT (strftime('%s', 'now')),
                 date_updated INTEGER(6),
-                editor INTEGER REFERENCES permissions_list(user_id),
+                accuser INTEGER REFERENCES permissions_list(user_id) NOT NULL,
                 override_name TEXT,
                 username TEXT NOT NULL,
                 aliases TEXT,
