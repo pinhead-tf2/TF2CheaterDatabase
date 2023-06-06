@@ -25,7 +25,7 @@ def steam3id_to_steamid64(steam3id):
             steam3id = steam3id.replace(ch, '')
     steam3id_split = steam3id.split(':')
     steamid64 = int(steam3id_split[2]) + baseSID64
-    return steamid64
+    return str(steamid64)
 
 
 def steamid64_to_steam3id(steamid64):

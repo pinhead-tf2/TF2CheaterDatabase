@@ -1,4 +1,12 @@
-async def mark_innocent(db, user: str, accuser: int):
+import aiohttp
+import aiosqlite
+
+from api.steam.query_steam_profile import get_user_aliases
+from api.general.cleaners import clean_aliases
+
+
+async def mark_innocent(db: aiosqlite.Connection, session: aiohttp.ClientSession, user: str, accuser: int):
+    aliases = await clean_aliases(await get_user_aliases(session, [user]))
     cursor = await db.execute(f'''
             INSERT INTO user_list
             (id, accuser, username, aliases, friends)
@@ -6,7 +14,7 @@ async def mark_innocent(db, user: str, accuser: int):
                 {user},
                 {accuser},
                 {"steamusernamequery"},
-                {"steamaliasesquery"},
+                {aliases[0]},
                 {"steamfriendsquery"}
             )
         ''')

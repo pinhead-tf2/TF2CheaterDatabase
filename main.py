@@ -19,18 +19,20 @@ bot = discord.Bot(
     activity=discord.Game(name="Initializing..."),
     owner_ids=[246291288775852033]
 )
+
 bot.startup_complete = False
 bot.startTime = time.time()
 bot.version = 'Indev'
 bot.releaseDate = 'Undetermined'
-bot.aiohttp_session = None
+bot.webhook_session = None
+bot.steamworks_session = None
 
 
 @bot.event
 async def on_ready():
     if bot.startup_complete:
         try:
-            await bot.aiohttp_session.close()
+            await bot.webhook_session.close()
             await bot.close()
         except RuntimeError:
             await bot.close()
@@ -64,6 +66,7 @@ async def on_ready():
         ''')
         await db.commit()
 
+    bot.steamworks_session = aiohttp.ClientSession()
     # bot.aiohttp_session = aiohttp.ClientSession()
     # bot.error_webhook = discord.Webhook.from_url(
     #     getenv("WEBHOOK_URL"),
@@ -82,7 +85,7 @@ admin = SlashCommandGroup("admin", "Admin/owner only commands", checks=[commands
 @commands.is_owner()
 async def shutdown(ctx):
     await ctx.respond("ok, shutting down", ephemeral=True)
-    await bot.aiohttp_session.close()
+    await bot.webhook_session.close()
     await bot.close()
 
 
