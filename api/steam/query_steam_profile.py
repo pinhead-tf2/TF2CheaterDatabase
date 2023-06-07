@@ -41,9 +41,8 @@ async def api_call_generic(session: aiohttp.ClientSession, call_type: str, steam
                                    'key': STEAM_API_KEY,
                                    'steamids': ','.join(steamid64s)
                                }) as response:
-            print(await response.text())
             responseJSON = await response.json()
-            return responseJSON['players']
+            return responseJSON['response']['players']
 
 
 async def get_user_aliases(session: aiohttp.ClientSession, steam3ids: list[str]):
@@ -60,9 +59,9 @@ async def get_user_aliases(session: aiohttp.ClientSession, steam3ids: list[str])
 
 async def main():
     async with aiohttp.ClientSession() as session:
-        arr = ["[U:1:1341943403]", "[U:1:858409410]"]
-        print(await get_user_aliases(session, arr))
-        # print(await api_call_generic(session, "GetPlayerBans", arr))
+        arr = ["[U:1:858409410]"]
+        # print(await get_user_aliases(session, arr))
+        print(await api_call_generic(session, "GetPlayerSummaries", arr))
 
 
 if __name__ == '__main__':
